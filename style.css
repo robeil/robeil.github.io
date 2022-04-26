@@ -35,7 +35,14 @@ li {
 p {
     font-size: 25px;
     text-align: center;
+    font-family: 'Tapestry', cursive;
 }
+a.links:hover {
+    text-decoration:underline;
+}
+a.links:link {color:#ff0000;text-decoration:none;}
+a.links:visited {color:#0000ff;text-decoration:none;}
+a.links:hover {text-decoration:underline;}
 .par {
     text-align: center;
 }
