@@ -1,84 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Home Page</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Home page</title>
-        <!--style-->
-        <style>
-            .header {
-                
-                font-family: 'Tapestry', cursive;
-                text-align: center;
-                overflow: hidden;
-                background-color: rgb(146, 115, 115);
-    
-            }
-            .footer {
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: rgb(146, 115, 115);
-                color: white;
-                text-align: center;
-            }
-            .per-image {
-                border: 5px solid rgb(214, 205, 205);
-                border-radius: 50%;
-                padding: 10px;
-                width: 342px;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-
-            }
-
-            body {
-                background-color: bisque;
-            }
-
-           
-        </style>
-
-    </head>
-
-
-    <body>
-        <div class="page">
-            <div class="header">
-                <div class="header-right">
-                    <h1>Robeil Aregawi</h1>
-                    <!--<a class="active" href="#home">Home</a>-->
-                </div>
-            </div>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
             <div>
-                <img src="./RobImage.jpeg" class="per-image" alt="Personal Photo" width="342" height="342" />
+                <h1>Robeil Aregawi</h1>
+                <!--<a class="active" href="#home">Home</a>-->
             </div>
-            <div>
-                <ul>
-                    <li><strong>W1D1 .</strong> <a href="https://robeil.github.io/"> This Home Page</a></li>
-                    <li><strong>W1D2 .</strong><a href="#"> About Me</a></li>
-                    <li><strong>W1D3 .</strong><a href="#"> Recipe</a></li>
-                    <li><strong>W1D4 .</strong><a href="#"> Movie Review</a></li>
-                    <li><strong>W1D5 .</strong><a href="#"> MP3 Library</a></li>
-                    <li><strong>W1D6 .</strong><a href="#"> Movie Library PHP</a></li>
-                </ul>
-            </div>
-
-
-            <footer class="footer">
-                <div>
-                    <a href="https://validator.w3.org/nu/?doc=https://github.com/robeil/robeil.github.io.git"
-                        rel="html validator">
-                        <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html validator" /></a>
-                </div>
-            </footer>
-
         </div>
-    </body>
+        <div>
+            <img src="./RobImage.jpeg" class="per-image" alt="Personal Photo" width="342" height="342" />
+        </div>
+        <div>
+            <ul class="unOrderLink">
+                <li><strong>W1D1 .</strong> <a href="https://robeil.github.io/"> This Home Page</a></li>
+                <li><strong>W1D2 .</strong><a href="./aboutMe.html"> About Me</a></li>
+                <li><strong>W1D3 .</strong><a href="#"> Recipe</a></li>
+                <li><strong>W1D4 .</strong><a href="#"> Movie Review</a></li>
+                <li><strong>W1D5 .</strong><a href="#"> MP3 Library</a></li>
+                <li><strong>W1D6 .</strong><a href="#"> Movie Library PHP</a></li>
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <a href="https://validator.w3.org/nu/?doc=https://github.com/robeil/robeil.github.io.git"
+                    rel="html validator">
+                    <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html validator" /></a>
+        
+                        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <img src=http://jigsaw.w3.org/css-validator/images/vcss alt="Valid CSS!"/> </a>
+            </div>
+        </footer>
+
+    </div>
+</body>
 
 </html>
