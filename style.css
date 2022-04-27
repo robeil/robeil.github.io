@@ -66,11 +66,11 @@ a.links:hover {text-decoration:underline;}
 }
 .sad {
     position: absolute;
-    top: 900px;
+    top: 770px;
     right: 0;
     border-radius: 50%;
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
-    width: 500px;
+    width: 550px;
 }
