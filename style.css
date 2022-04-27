@@ -62,6 +62,7 @@ a.links:hover {text-decoration:underline;}
 .happy {
     position: relative;
     border-radius: 50%;
+    left: 10;
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
@@ -69,8 +70,9 @@ a.links:hover {text-decoration:underline;}
 }
 .sad {
     position: absolute;
-    top: 770px;
-    right: 0;
+    float: right;
+    top: 50em;
+    left: 150em;
     border-radius: 20%;
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
