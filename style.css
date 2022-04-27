@@ -71,11 +71,17 @@ a.links:hover {text-decoration:underline;}
 .sad {
     position: absolute;
     float: right;
-    top: 50em;
-    left: 100em;
+    top: 45em;
+    left: 50em;
     border-radius: 20%;
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
     width: 550px;
+}
+.sadd {
+    position: absolute;
+    float: right;
+    top: 50em;
+    left: 50em;
 }
