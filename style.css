@@ -62,6 +62,7 @@ a.links:hover {text-decoration:underline;}
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
+    width: 500px;
 }
 .sad {
     position: absolute;
@@ -71,4 +72,5 @@ a.links:hover {text-decoration:underline;}
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
+    width: 500px;
 }
