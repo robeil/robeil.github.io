@@ -60,19 +60,19 @@ a.links:hover {text-decoration:underline;}
     padding: 14px 16px;
 }
 .happy {
-    position: relative;
-    border-radius: 50%;
-    left: 10;
+    /**position: relative;*/
+    border-radius: 20%;
+    /**left: 10;*/
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
-    width: 500px;
+    width: 550px;
 }
 .sad {
-    position: absolute;
+    /**position: absolute;
     float: right;
     top: 45em;
-    left: 50em;
+    left: 50em;*/
     border-radius: 20%;
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
