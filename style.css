@@ -3,7 +3,7 @@ body {
 }
 
 .header {
-    font-family: 'Tapestry', cursive;
+   font-family: 'Tapestry', cursive; 
     text-align: auto;
     overflow: hidden;
     background-color: rgb(146, 115, 115);
