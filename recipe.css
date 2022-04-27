@@ -17,6 +17,7 @@ body {
     color: #404040;
     /**font-size: 11pt;*/
     font-family: Georgia;
+    size: 1024x768;
 }
 a {
     color: #A4A400;
@@ -38,4 +39,9 @@ a {
     text-align: center;
     padding: 14px 16px;
 
+}
+.prepe {
+    
+    float: right;
+    bottom: 0em;
 }
