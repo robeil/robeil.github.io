@@ -1,0 +1,64 @@
+body {
+background-image: url(https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/maharishi_international_u/standard.png?1581528524);
+
+}
+
+
+h1 {
+    position: relative;
+    color: green;
+    font-size: 200px;
+    text-align: center;
+
+
+}
+
+#gradeBox {
+    background-color: antiquewhite;
+    position: relative;
+    border: 1px solid;
+    padding: 10px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin-top: 0%;
+    margin-left: 25%;
+    height: 1000px;
+    box-shadow: 5px 25px 18px 10px #888888;
+}
+select {
+    font-size: 30px;
+}
+#form {
+    position: absolute;
+    margin-left: 30%;
+    align-items: center;
+
+}
+
+label {
+    color: black;
+    font-size: 50px;
+}
+
+#fname,
+#lname, #sId,#assign {
+
+    width: 450px;
+    height: 50px;
+}
+
+#submit {
+    background-color: rgb(139, 172, 141);
+    width: 150px;
+    height: 50px;
+    border-radius: 15%;
+    font-size: xx-large;
+}
+
+input {
+    font-size: x-large;
+}
+radio {
+    font-size: medium;
+}
