@@ -8,7 +8,7 @@
     text-align: center;
     font-family: bolder;
 }
-#head2 {
+#headtwo {
     font-family: lighter;
 }
 body {
@@ -42,6 +42,7 @@ a {
 }
 .prepe {
     
-    float: right;
-    bottom: 0em;
+    float: left;
+    background-color: red;
+    bottom: 0;
 }

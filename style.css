@@ -66,11 +66,11 @@ a.links:hover {text-decoration:underline;}
     border : 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
-    width: 550px;
+    width: 500px;
 }
 .sad {
-    /**position: absolute;
-    float: right;
+    /**position: absolute;*/
+    /**float: right;
     top: 45em;
     left: 50em;*/
     border-radius: 20%;
@@ -79,9 +79,4 @@ a.links:hover {text-decoration:underline;}
     text-shadow: 12px 12px;
     width: 550px;
 }
-.sadd {
-    position: absolute;
-    float: right;
-    top: 50em;
-    left: 50em;
-}
+

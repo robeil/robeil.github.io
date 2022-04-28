@@ -1,0 +1,76 @@
+body {
+    background-image: url(./movieimages/background.png);
+    font-size: 8pt;
+    background-color:rgb(220, 210, 150);
+    margin: 0px;
+    padding: 0px;
+    font-size: 8pt;
+}
+#to-head, #bigbox {
+  text-align: center;
+  background-image:url("./movieimages/bannerbg.png") ;
+  background-repeat: repeat-x;
+}
+
+.bannerimg {
+    overflow: auto;
+    width: 100%;
+}
+
+.head-txt {
+    font-family: Verdana;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+
+}
+
+#bigbox {
+    width: 800px;
+  margin: auto;
+  border: 4px solid gray;
+  border-radius: 20px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.rottenrbg {
+    position: relative;
+    width: 100%;
+    border-radius: 50px 50px 0px 0px;
+    height: 460px;
+}
+
+.rottenbig {
+    position: absolute;
+    width: 20%;
+    top: 8px;
+    border-radius: 50px 0px 0px 0px;
+    overflow: hidden;
+    height: fit-content;
+
+}
+
+.percentage {
+    position: absolute;
+    top: 0px;
+    left: 25%;
+    color: red;
+    font-size: 235px;
+}
+.overview {
+    border-radius: 0px 50px 0px 0px;
+    width: 800px;
+
+}
+rightbox {
+   
+}
+.rightboxbuttom {
+    position: absolute;
+    
+} 
+#boarderbox {
+    padding: 5px;
+    border: 2px solid red;
+    border-radius: 5px;
+}
