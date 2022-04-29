@@ -21,25 +21,22 @@
 }
 
 .form {
-    margin-top: 10%;
-    
+    margin-top: 15%;
+    margin-left: 20%;
 }
-
 label {
     font-weight: bold;
     margin-left: 10%;
     padding-bottom: 5px;
-
-
 }
 
 #name {
-    margin-left: 5%;
+    margin-left: 7%;
 
 }
 
 #age {
-    margin-left: 6%;
+    margin-left: 8%;
     
 }
 
@@ -71,7 +68,7 @@ a:hover{
 }
 
 #male {
-    margin: 10px;
+    margin-left: 28px;
 }
 
 #submit {

@@ -3,16 +3,23 @@
 body{
   font-family: Verdana,Tahoma, sans-serif;
   font-size: 8pt;
-  background-image: url("images/background.png");
+  background-image: url("./movieimages/background.png");
   background-color:rgb(220, 210, 150);
   margin: 0px;
   padding: 0px;
 }
-#topBanner{
-  text-align: center;
-  background-image:url("images/bannerbg.png") ;
+#head_banner {
+  background-image: url("./movieimages/banner.png");
+  width: 100%;
+  height: auto;
+  background-position: center;
   background-repeat: repeat-x;
-  
+}
+
+#rightImage {
+  float: right;
+  background-color: #A2B964;
+  width: 50%;
 }
 h1{
   text-align: center;
@@ -36,6 +43,7 @@ h1{
   font-family: Arial,sans-serif;
   font-size: 8pt;
   font-weight: bold;
+  
 }
 dl{
   padding: 10pt;
@@ -53,19 +61,20 @@ ul{
   height:350px;
 }
 #posterHeader{
+ 
   font-size: 48pt;
   color: red;
   font-weight: bold;
-  background-image: url("images/rbg.png");
+  background-image: url("./movieimages/rbg.png");
 
 }
 #posterHeader > img{
   vertical-align: bottom;
 }
-#reviews{
-  width: 67%;
-  overflow:auto;
-}
+/* #reviews{
+   width: 67%;
+  overflow:auto; 
+} */
 .review{
   width: 93%;
   margin-top: 10px;

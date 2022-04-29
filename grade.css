@@ -1,5 +1,5 @@
 body {
-background-image: url(https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/maharishi_international_u/standard.png?1581528524);
+    background-image: url(https://d92mrp7hetgfk.cloudfront.net/images/sites/misc/maharishi_international_u/standard.png?1581528524);
 
 }
 
@@ -19,13 +19,15 @@ h1 {
     display: flex;
     align-items: center;
     margin-top: 0%;
-    margin-left: 25%;
+    margin-left: 20%;
     height: 800px;
     box-shadow: 5px 25px 18px 10px #888888;
 }
+
 select {
     font-size: 30px;
 }
+
 #form {
     position: absolute;
     margin-left: 30%;
@@ -39,7 +41,9 @@ label {
 }
 
 #fname,
-#lname, #sId,#assign {
+#lname,
+#sId,
+#assign {
 
     width: 450px;
     height: 50px;
@@ -56,6 +60,7 @@ label {
 input {
     font-size: x-large;
 }
+
 radio {
     font-size: medium;
 }
