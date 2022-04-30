@@ -2,14 +2,18 @@ body {
     background-color: bisque;
 }
 
+#wholeContainer, .listCourse, .listMoives, .allign, .neighbor {
+    text-align: center;
+}
+
 .header {
-  top: 0%;
-   font-family: 'Tapestry', cursive; 
+
+    font-family: 'Tapestry', cursive;
     text-align: auto;
     overflow: hidden;
     background-color: rgb(146, 115, 115);
     width: 100%;
-    float: left;
+    top: 0;
     display: block;
     color: #f2f2f2;
     text-align: center;
@@ -18,8 +22,9 @@ body {
 
 
 }
+
 .footer {
-    position: fixed;
+    overflow: hidden;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -28,10 +33,12 @@ body {
     text-align: center;
     padding: 14px 16px;
 }
+
 img {
     vertical-align: baseline;
     vertical-align: middle;
 }
+
 .per-image {
     border: 5px solid rgb(214, 205, 205);
     border-radius: 50%;
@@ -42,6 +49,7 @@ img {
     margin-right: auto;
 
 }
+
 li {
     font-size: 25px;
 }
@@ -51,12 +59,25 @@ p {
     text-align: center;
     font-family: 'Tapestry', cursive;
 }
+
 a.links:hover {
-    text-decoration:underline;
+    text-decoration: underline;
 }
-a.links:link {color:#ff0000;text-decoration:none;}
-a.links:visited {color:#0000ff;text-decoration:none;}
-a.links:hover {text-decoration:underline;}
+
+a.links:link {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+a.links:visited {
+    color: #0000ff;
+    text-decoration: none;
+}
+
+a.links:hover {
+    text-decoration: underline;
+}
+
 .par {
     text-align: center;
 }
@@ -65,20 +86,20 @@ a.links:hover {text-decoration:underline;}
     /**position: relative;*/
     border-radius: 20%;
     /**left: 10;*/
-    border : 5px solid rgb(145, 112, 112);
+    border: 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
     width: 500px;
 }
+
 .sad {
     /**position: absolute;*/
     /**float: right;
     top: 45em;
     left: 50em;*/
     border-radius: 20%;
-    border : 5px solid rgb(145, 112, 112);
+    border: 5px solid rgb(145, 112, 112);
     padding: 10px;
     text-shadow: 12px 12px;
     width: 550px;
 }
-
