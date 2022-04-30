@@ -3,6 +3,7 @@ body {
 }
 
 .header {
+    position: fixed;
    font-family: 'Tapestry', cursive; 
     text-align: auto;
     overflow: hidden;
@@ -16,6 +17,16 @@ body {
     text-decoration: none;
 
 
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(146, 115, 115);
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
 }
 img {
     vertical-align: baseline;
@@ -49,16 +60,7 @@ a.links:hover {text-decoration:underline;}
 .par {
     text-align: center;
 }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(146, 115, 115);
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-}
+
 .happy {
     /**position: relative;*/
     border-radius: 20%;
