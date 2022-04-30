@@ -1,3 +1,4 @@
+//A function that calculate tip and give the final total price
 function calculateTip() {
     //getting the subtotal
     let subtotal = document.getElementById("subTotal").value;
