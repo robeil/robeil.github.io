@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./decoratemytext.css" rel="stylesheet">
+		<title>Decorate my Text</title>
+
+	</head>
+
+	<body>
+		<div>
+			<h1 id="header">Text Decorator</h1>
+			<img id="image" src="./decoratedimg.jpeg" alt="very decorated!" />
+		</div>
+		<div>
+			<fieldset>
+				<legend>Text</legend>
+				<textarea id="textAre" type="text" placeholder="Sample Item 1" raws="4" cols="30"></textarea>
+			</fieldset>
+			<fieldset>
+				<legend>Decoration</legend>
+				<button type="button" onclick="makeItBigger()" id="btn">Bigger Decorations</button><br>
+				<input type="checkbox" onchange="applyCss()" id="bling">
+				<label for="bling" id="blingtext">Bling</label>
+			</fieldset>
+		</div>
+
+		<!-- Your UI controls go here -->
+		<script src="./decoratemytext.js"></script>
+	</body>
+
+</html>
