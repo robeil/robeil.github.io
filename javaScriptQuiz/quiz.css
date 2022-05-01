@@ -1,0 +1,11 @@
+h1{
+    text-align: center;
+}
+
+#displayBox {
+    border: 4px solid gray;
+    border-radius: 10%;
+    width: 60%;
+    margin-left: 20%;
+    box-shadow: gold 12px 12px 1px;
+}
