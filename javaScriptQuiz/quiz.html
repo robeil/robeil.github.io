@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./quiz.css" rel="stylesheet">
-    <title>JavaScript Questions</title>
-</head>
-<body>
-    <div id="WholeBox">
-        <h1>JavaScript  short  mock quiz</h1>
-        <div id="displayBox">
-            <div id="question-container">
-                <div id="question"></div>
-                <div id="choices"></div>
-                <div id="showAnswer"></div>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./quiz.css" rel="stylesheet">
+        <title>JavaScript Questions</title>
+    </head>
+
+    <body>
+        <div id="WholeBox">
+            <h1>JavaScript short mock quiz</h1>
+            <div id="displayBox">
+                <div id="question-container">
+                    <div id="thanks">
+                        <h1>Well done by finishing on time.</h1>
+                        <h1>And thank you for choosing our website </h1>
+                    </div>
+                    <div>
+                        <img id="question1" src="./questions/number1.png" alt="questions 1" />
+                    </div>
+                    <div>
+                        <img id="question2" src="./questions/number2.png" alt="questions 2" />
+                    </div>
+                    <div>
+                        <img id="question3" src="./questions/number3.png" alt="questions 3" />
+                    </div>
+                    <div>
+                        <img id="question4" src="./questions/number4.png" alt="questions 4" />
+                    </div>
+                </div>
+                <button id="startBtn" type="button" onclick="startQuiz()">Start Quiz</button>
+                <button id="go-back" type="button" onclick="goingBack()">Go back</button>
+                <button id="submit" type="button" onclick="finishQuiz()">Finish</button>
             </div>
-            <button id="startBtn" type="button">Start Quiz</button>
-            <button id="go-back" class="hide">Go back</button>
-            <button id="clear-score">Clear Highscores</button>
-            <input type="submit" id="submit" value="Submit">
         </div>
-    </div>
-    <script src="./quiz.js"></script>
-</body>
+        <script src="./quiz.js"></script>
+    </body>
+
 </html>
