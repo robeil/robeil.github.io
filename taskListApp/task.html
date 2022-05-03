@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./task.css" rel="stylesheet">
         <title>Task List Application</title>
+        <script src="./task.js"></script>
     </head>
 
     <body>
@@ -22,10 +23,10 @@
                         <input type="text" id="task" name="task" placeholder="Task"><br>
                     </div>
                     <div class="leftColumn">
-                        <button type="button" onclick="addingTask()" class="addBtn">Add Task</button><br>
+                        <button type="button"  id="addBtn">Add Task</button><br>
                     </div>
                     <div class="leftColumn">
-                        <button type="button" onclick="clearTask()" class="clearBtn">Clear Tasks</button>
+                        <button type="button"  id="clearBtn">Clear Tasks</button>
                     </div>
                     <div class="rightColumn">
                         <label for="taskTextField">Task List</label><br>
@@ -34,7 +35,7 @@
                 </form>
             </div>
         </div>
-        <script src="./task.js"></script>
+   
     </body>
 
 </html>
