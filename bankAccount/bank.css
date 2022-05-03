@@ -14,10 +14,15 @@ body {
 }
 form {
     margin: 10%;
-    width: 50%;
+    width: 60%;
+}
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
 }
 input, label {
     font-family: bold;
     width: 100%;
-    font-size: 30px;
+    font-size: 25px;
 }

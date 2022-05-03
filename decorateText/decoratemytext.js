@@ -20,15 +20,12 @@ function interval() {
 function changeFont() {
 
   if (check.checked) {
-    console.log("checked");
-    
     document.getElementById("textArea").style.fontWeight = "bold";
     document.getElementById("textArea").style.color = "green";
     document.getElementById("textArea").style.textDecoration = "underline";
     body.style.backgroundImage = "url('./Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpeg')";
     
   } else {
-    console.log("unchecked");
     document.getElementById("textArea").style.fontWeight = "normal";
     document.getElementById("textArea").style.fontWeight = "black";
     document.getElementById("textArea").style.textDecoration = "none";
