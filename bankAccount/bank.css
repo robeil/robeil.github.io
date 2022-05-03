@@ -17,12 +17,17 @@ form {
     width: 60%;
 }
 textarea {
-    min-width: 100%;
-    max-width: 100%;
+    margin-left: 10%;
+    min-width: 60%;
+    max-width: 60%;
     min-height: 150px;
 }
+button {
+    margin-left: 10%;
+}
 input, label {
+    margin-left: 10%;
     font-family: bold;
-    width: 100%;
-    font-size: 25px;
+    width: 60%;
+    font-size: 30px;
 }
