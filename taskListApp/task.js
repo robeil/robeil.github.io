@@ -6,10 +6,10 @@ function addingTask() {
     //document.getElementById("textField").innerHTML += mainTask;
     //saving the user input
     localStorage.setItem(taskKey, mainTask);
-    
-    //clearing the test field after that
-    document.getElementById("task").value = "";
-    document.getElementById("textField").innerHTML= localStorage.getItem(taskKey);
+
+   
+    document.getElementById("textField").value += document.getElementById("task").value + "\n";
+    // document.getElementById("task").value = "";
 }
 //clearing given task
 function clearTask() {
