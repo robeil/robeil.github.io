@@ -27,3 +27,4 @@ function onLoadEvent() {
         document.getElementById("textField").value = "";
     }
 }
+
