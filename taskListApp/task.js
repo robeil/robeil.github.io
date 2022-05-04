@@ -8,18 +8,23 @@ function onLoadEvent() {
     let mainTask = document.getElementById("textField");
     let task = document.getElementById("task");
 
-    mainTask.textContent += localStorage.getItem(key);
-    if (localStorage.getItem(key) === null) mainTask.textContent = "";
-
+    if (task) {
+        mainTask.textContent = task.value;
+    }
     //addBtn.onclick = 
     addBtn.onclick = function () {
         //document.getElementById("textField").innerHTML += mainTask;
-        let oldTask = localStorage.getItem(key);
-        if (oldTask === null) oldTask = "";
-        //saving the user input
-        localStorage.setItem(oldTask + task.value + "\n");
-        mainTask.textContent = oldTask;
+        if (localStorage.getItem('textinput') && task.value != null) {
+            localStorage.setItem("textinput", localStorage.getItem("textinput") + '\n' + task.value);
+        } else {
+            localStorage.setItem("textinput", task.value);
+        }
+        if (localStorage.getItem('textinput')) {
+            mainTask.textContent = localStorage.getItem('textinput')
+        }
     }
+
+
     // clearBTn.onclick = 
     //clearing given task
     clearBTn.onclick = function () {
