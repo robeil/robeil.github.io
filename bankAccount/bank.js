@@ -1,13 +1,23 @@
 
-window.onload= function(){
+window.onload = function () {
     //array that store bank accounts
-    let listOfAccount = [];
 
     class Bank {
+        #accountName;
+        #deposit;
+        static listOfAccount = [];
+        //constructor
         constructor(accountName, deposit) {
-            this.accountName = accountName;
-            this.deposit = deposit;
+            this.#accountName = accountName;
+            this.#deposit = deposit;
         }
+        getAccountName() {
+            return this.#accountName;
+        }
+        getDeposit() {
+            return this.#deposit;
+        }
+        //Method that return firstName and lastName
         returnDetails() {
             if (this.accountName == "" || this.deposit == "") {
                 return null;
@@ -15,38 +25,37 @@ window.onload= function(){
             return this.argumentName + " " + this.deposit;
         }
     }
-    
+
     //function that create the actual bank using the user input 
-    function createBankAccount() {
-        console.log("account trying to be created");
-        console.log("bankAccount() function being called");
+    btn.onclick = function () {
+
         //retrieving the user input
-        let accountName = document.getElementById("accountName").value;
-        let deposit = document.getElementById("deposit").value;
-
+        let accountName = document.getElementById("nameInp");
+        let deposit = document.getElementById("depositInp");
+        //log for debugging
+        console.log(accountName.value);
+        console.log(deposit.value);
         //creating new account by passing the data from the user input
-        let newBank = new Bank(accountName, deposit);
+        let newBank = new Bank(accountName.value, deposit.value);
 
-        //adding the new bank to the array
-        listOfAccount.push(newBank);
-
+        //adding the new bank Object to the array
+        Bank.listOfAccount.push(newBank);
+        console.log("Cereated account object " + Bank.listOfAccount);
+        //log debugging 
+        Bank.listOfAccount.forEach(user => console.log(`${user.accountName}+ " " ${user.deposit}`))
         //displaying the bank details
-        displayBankInfo();
+        document.getElementById("txt").textContent = displayBankInfo();
     }
 
     //function that display the bank details to the textarea
     function displayBankInfo() {
-        //calling the to create a bank
-        console.log("displaying() function being called");
-        var details;
-
         //appending the bank details to the text-field
-        for (let i = 0; i < listOfAccount.length; i++) {
-            details += listOfAccount[i].returnDetails();
+        //Bank.listOfAccount.forEach(user=>document.getElementById("txt").value += `${user.returnDetails()}`);
+        let display = "";
+        for (let i = 0; i < Bank.listOfAccount.length; i++) {
+            display += "Account Name : " + Bank.listOfAccount[i].getAccountName() + "Balance : " + Bank.listOfAccount[i].getDeposit() + "\n";
         }
-        document.getElementById("textArea1").value = details;
-
+        return display;
     }
-    //window.onload = createBankAccount();
 
 }
