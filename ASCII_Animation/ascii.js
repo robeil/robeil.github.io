@@ -1,57 +1,16 @@
-$(document).ready(function () {
 
-    //start button
-    $("#start").click(function () {
-        $("textarea").html("Hello Robeil");
+var url = "./animation.js";
+
+$.getScript(url, function () {
+
+    $(document).ready(function () {
+        //start button
+         $("#start").click(function () {
+             $("textarea").html(DIVE).slideUP("slow");
+           // $("#start").hide("slow");
+         });
+     
+
     });
 
-    // $("stop").onclick(function () {
-        
-    // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-

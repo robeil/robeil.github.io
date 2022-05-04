@@ -3,25 +3,26 @@ window.onload = onLoadEvent;
 
 function onLoadEvent() {
 
-    var addBtn = document.getElementById("addBtn");
-    var clearBTn = document.getElementById("clearBtn");
+    let addBtn = document.getElementById("addBtn");
+    let clearBTn = document.getElementById("clearBtn");
+    let mainTask = document.getElementById("textField");
+    let task = document.getElementById("task");
 
-    addBtn.onclick = function addingTask() {
-        //getting the data from the input
-        var taskKey = document.getElementById("task").value;
-        var mainTask = document.getElementById("textField");
+    mainTask.textContent += localStorage.getItem(key);
+    if (localStorage.getItem(key) === null) mainTask.textContent = "";
+
+    //addBtn.onclick = 
+    addBtn.onclick = function () {
         //document.getElementById("textField").innerHTML += mainTask;
+        let oldTask = localStorage.getItem(key);
+        if (oldTask === null) oldTask = "";
         //saving the user input
-        localStorage.setItem(taskKey, taskKey);
-        let storedKey = localStorage.getItem(taskKey);
-        console.log(taskKey);
-
-        document.getElementById("textField").value += storedKey + "\n";
-        mainTask.textContent = localStorage.getItem(taskKey);
-        // document.getElementById("task").value = "";
+        localStorage.setItem(oldTask + task.value + "\n");
+        mainTask.textContent = oldTask;
     }
+    // clearBTn.onclick = 
     //clearing given task
-    clearBTn.onclick = function clearTask() {
+    clearBTn.onclick = function () {
         localStorage.clear();
         document.getElementById("task").value = "";
         document.getElementById("textField").value = "";

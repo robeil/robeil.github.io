@@ -31,3 +31,11 @@ input, label {
     width: 60%;
     font-size: 30px;
 }
+#deposit {
+    margin-left: 10%;
+    width:  100px;
+}
+#debit {
+    margin-left: 10%;
+    width: 100px;
+}

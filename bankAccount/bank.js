@@ -32,15 +32,13 @@ window.onload = function () {
         //retrieving the user input
         let accountName = document.getElementById("nameInp");
         let deposit = document.getElementById("depositInp");
-        //log for debugging
-        console.log(accountName.value);
-        console.log(deposit.value);
+       
         //creating new account by passing the data from the user input
         let newBank = new Bank(accountName.value, deposit.value);
 
         //adding the new bank Object to the array
         Bank.listOfAccount.push(newBank);
-        console.log("Cereated account object " + Bank.listOfAccount);
+        
         //log debugging 
         Bank.listOfAccount.forEach(user => console.log(`${user.accountName}+ " " ${user.deposit}`))
         //displaying the bank details
@@ -57,5 +55,5 @@ window.onload = function () {
         }
         return display;
     }
-
+    
 }
