@@ -1,72 +1,740 @@
 "use strict";
+(function(){
+window.onload = function () {
 
-var url = "./animation.js";
 
-$.getScript(url, () => {
+  var btnStart = document.getElementById("start");
+  var btnStop = document.getElementById("stop");
+  document.getElementById("stop").disabled = true;
 
-  $(document).ready( () => {
 
-    let selectedAnimation = "BLANK";
-    let selectedSize;
-    let turboSpeed = 250;
+  //set selected size
+  document.getElementById("sizeSelection").onchange= setSize;
+  document.getElementById("turbo").onchange= setSpeed;
 
-    let stop = 0;
 
-    //adjusting the default value 
-    // $("#sizeSelection").change(() => {
-    //   selectedSize = $(this).children("Option:selected").val();
-    // });
-    // $("#turbo").change(() => {
-    //   turboSpeed = $(this).children("Option:selected").val();
-    // });
+  btnStart.onclick = animate;
+  btnStop.onclick = stopAnim;
 
-    //start button
-    $("#start").click(() => {
 
-      animationStarted();
-      //disabling the buttons during animation
-      $("start").prop("disabled", true);
-      $("#sizeSelection").prop("disabled", true);
-      $("#animationList").prop("disabled", true);
-      $("#turbo").prop("disabled", true);
-      $("textarea").prop("disabled", true);
+}
+var x=null;
+var speed=250;
+var typedText="";
+var selectedAnim="Blank";
+function animate() {
+  selectedAnim=  document.getElementById("animationList").value;
+  let arr = ANIMATIONS[selectedAnim].split("=====");
+  var i=0;
+  //enable stop
+  document.getElementById("stop").disabled = false;
+  //save typed text before viewing the animation
+  typedText= document.getElementById("textField").value;
+  
+  
+  x= setInterval(changeText, speed);
+  document.getElementById("start").disabled = true;
+  document.getElementById("animationList").disabled = true;
 
-    });
 
-    //stop button
-    $("#stop").click(function () {
-      clearInterval(stop)
-      $("#start").prop("disabled", false);
-      $("#animationList").prop("disabled", false);
-      $("#sizeSelection").prop("disabled", false);
-      $("#turbo").prop("disabled", false);
-      //$("textarea").prop("disabled", false);
-    });
-
-    let animationStarted = () => {
-      let index;
-      selectedAnimation = document.getElementById("animationList").value;
-      //splitting the array to get individual figure
-      let tempArray = ANIMATIONS[selectedAnimation].split("=====");
-      console.log(tempArray.length);
-
-      stop = setInterval(loopingText, turboSpeed);
-
-      $("start").prop("disabled", true);
-      $("#stop").prop("disabled", false);
-      $("#animationList").prop("disabled", true);
-
-      function loopingText() {
-
-        if (index < (tempArray.length - 1)) {
-          index = index +1;
-        } else if (index === ((tempArray.length - 1))) {
-          index = 0;
-        }
-        //$("#textField").value(tempArray[index]); /// ??????
-        document.getElementById("textarea").value = tempArray[index];
-      }
+  function changeText() {
+  
+    if (i < (arr.length - 1)) {
+      i = i + 1;
+    } else if (i === (arr.length - 1)) {
+      i = 0;
     }
+    document.getElementById("textField").value = arr[i];
+  }
+}
+function stopAnim(){
+  clearInterval(x);
+  document.getElementById("start").disabled = false;
+  document.getElementById("animationList").disabled = false;
+  document.getElementById("stop").disabled = true;
 
-  })
-})
+  document.getElementById("textField").value = typedText;
+
+  
+}
+
+function setSize(){
+  document.getElementById("textField").style.fontSize= document.getElementById("sizeSelection").value ;
+}
+
+function setSpeed(){
+  if(document.getElementById("turbo").checked){
+    speed=50;
+  }else{
+    speed=250;
+  }
+}
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CSE 190 M, Homework 6: ASCIImation
+// This file contains the ASCII animations as large strings.
+//
+// You can refer to them by variable names such as blank or dive, or by indexes
+// into an array ANIMATIONS, such as ANIMATIONS["Bike"] or ANIMATIONS["Dive"].
+//
+// The former is probably more intuitive for new programmers, but the latter
+// may allow you to write more elegant code by indexing using the text of the
+// menu option selected in the HTML.  (See bottom of file.)
+//
+// (Hint: The array index you want is the same as the select box's selected value...)
+//
+// YOU SHOULD NOT EDIT THIS FILE IN ANY WAY.
+// TO ADD YOUR CUSTOM ANIMATION, CREATE YOUR OWN FILE myanimation.js AND
+// PUT YOUR CODE IN THERE.  In myanimation.js, it is legal for you to modify
+// the variables that have been declared in this file.
+
+var BLANK = "";
+
+var CUSTOM = "";   // you could change the value of this variable in your code
+
+var EXERCISE = "  o\n" +
+  " /#\\\n" +
+  " _|_\n" +
+  "=====\n" +
+  " \\o/\n" +
+  "  #\n" +
+  "_/ \\_\n";
+
+var JUGGLER = "   o\n" +
+  "   O\n" +
+  " o/|\\o\n" +
+  "  / \\\n" +
+  "=====\n" +
+  "    o\n" +
+  " o_O\n" +
+  "   |o\n" +
+  "  / \\\n" +
+  "=====\n" +
+  " o   o\n" +
+  "  \\O\n" +
+  "   o\\\n" +
+  "  / \\\n" +
+  "=====\n" +
+  "  o\n" +
+  "  _O_o\n" +
+  "  o|\n" +
+  "  / \\\n";
+
+var BIKE = "\n" +
+  "   _o\n" +
+  " _< \\\\_\n" +
+  "(_)>(_)            .\n" +
+  "=====\n" +
+  "\n" +
+  "     _o\n" +
+  "   _< \\\\_\n" +
+  "  (_)>(_)          .\n" +
+  "=====\n" +
+  "\n" +
+  "       _o\n" +
+  "     _< \\\\_\n" +
+  "    (_)>(_)        .\n" +
+  "=====\n" +
+  "          o\n" +
+  "         /\\\\_\n" +
+  "       _< (_)\n" +
+  "      (_)          .\n" +
+  "=====\n" +
+  "            o\n" +
+  "           /\\\\_\n" +
+  "         _< (_)\n" +
+  "        (_)        .\n" +
+  "=====\n" +
+  "             _\n" +
+  "           _ \\\\\\\\o\n" +
+  "          (_)/<_\n" +
+  "              (_)  .\n" +
+  "\n" +
+  "=====\n" +
+  "               _\n" +
+  "             _ \\\\\\\\o\n" +
+  "            (_)/<_\n" +
+  "                (_).\n" +
+  "=====\n" +
+  "                  _\n" +
+  "                 (_)\\\\__/o\n" +
+  "                   \\\\_| \\\\\n" +
+  "                  .(_)\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\' \\\\/\n" +
+  "                  .  (_)\'  _\\\\o_\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'  \\\\/\n" +
+  "                  .  (_)\'   _\\\\o_\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'   \\\\/\n" +
+  "                  .  (_)\'    _\\\\o_\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'    \\\\/\n" +
+  "                  .  (_)\'     _\\\\o_\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'    \\\\/\n" +
+  "                  .  (_)\'     _\\\\_o\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'    \\\\/\n" +
+  "                  .  (_)\'     _\\\\__o\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'    \\\\/\n" +
+  "                  .  (_)\'     _\\\\__ o\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'    \\\\/\n" +
+  "                  .  (_)\'     _\\\\__  o\n" +
+  "=====\n" +
+  "                       _\n" +
+  "                      (_)\n" +
+  "                      _|/\'    \\\\/\n" +
+  "                  .  (_)\'     _\\\\__   o\n";
+
+var DIVE = "  o\n" +
+  " /|\\\n" +
+  ",/ \\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "..,..,,.,...,,|.,|..,.,,...,..,,,..,..,..,.,\n" +
+  "=====\n" +
+  "     o\n" +
+  "    -|-\n" +
+  "    / \\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,..,,.,..,,.,|..|.,.,,,...,.,,...,,,.,..,,,\n" +
+  "=====\n" +
+  "      \\o/\n" +
+  "       |\n" +
+  "      / \\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,..,,.,..,,.,|..|.,.,,,...,.,,...,,,.,..,,,\n" +
+  "=====\n" +
+  "        \\o/\n" +
+  "        /\n" +
+  "       / \\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,..,,.,..,,.,|..|.,.,,,...,.,,...,,,.,..,,,\n" +
+  "=====\n" +
+  "            |o__\n" +
+  "            /\n" +
+  "          /\\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,.,.,.,.,.,|.,|..,,..,,.,.,..,,,,.,,.,.,.\n" +
+  "=====\n" +
+  "              o/__\n" +
+  "           __/\n" +
+  "             \\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,.,.,.,.,.,|.,|..,,..,,.,.,..,,,,.,,.,.,.\n" +
+  "=====\n" +
+  "\n" +
+  "                  __ o__\n" +
+  "                 /)  \\\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "...,,,...,.,.,|..|.,.,...,,,.,..,.,.,,,..,..\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "                           \\)\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/    \\\n" +
+  "-|----------|-|--|-|--\'    /o\\\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "....,...,...,,|,,|,.,.,.,.,.,.,.,....,,,,,..\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |           \\|\n" +
+  "              |  |            \\o\n" +
+  "              |  |            ( \\\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,....,,...|.,|.,.,.,.,.,.,.,.,.,.,.,.,,,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |                \\)\n" +
+  "              |  |                |\n" +
+  "              |  |               /o\\\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,,,...,.,,,,,|.,|.,,,.,.,,.,..,.,,....,,,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |                 \\ /\n" +
+  "              |  |                  |\n" +
+  "              |  |                 /o\\\n" +
+  ",..,.,..,,.,.,|,,|.,,,.,,.,,.,...,,..,,.,..,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,,.,,.,,.,,.,|.,|.,,...,,.,.,..,,.,\\|.,..,.\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |                `.\' \'.\n" +
+  ".,,.,,.,,.,,.,|.,|.,,...,,.,.,..,,.,`\'.,..,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.,.,,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.,.,,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.,.,,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |           .--.-.--.-.---.--.\n" +
+  "              |  |          (YEA, that was fun!)\n" +
+  "              |  |           `-\'.\'\'--\'-\'--\'`--\'\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |           .--.-.--.-.---.--.\n" +
+  "              |  |          (YEA, that was fun!)\n" +
+  "              |  |           `-\'.\'\'--\'-\'--\'`--\'\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |           .--.-.--.-.---.--.\n" +
+  "              |  |          (YEA, that was fun!)\n" +
+  "              |  |           `-\'.\'\'--\'-\'--\'`--\'\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |           .--.-.--.-.---.--.\n" +
+  "              |  |          (YEA, that was fun!)\n" +
+  "              |  |           `-\'.\'\'--\'-\'--\'`--\'\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n" +
+  "=====\n" +
+  "\n" +
+  "\n" +
+  "\n" +
+  "\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"\'\"/\n" +
+  "-|----------|-|--|-|--\'\n" +
+  "/            \\ \\/ /\n" +
+  "              )  (\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  "              |  |\n" +
+  ".,.,,,,.,.,,.,|..|.,,,,.,..,,.,.,,.,.\\o/,.,\n";
+
+
+// can also access the animations as an associative array / hash map,
+// such as ANIMATIONS["Bike"] or ANIMATIONS["Dive"]
+var ANIMATIONS = [];
+ANIMATIONS["Blank"] = ANIMATIONS["blank"] = ANIMATIONS["BLANK"] = "";
+ANIMATIONS["Custom"] = ANIMATIONS["custom"] = ANIMATIONS["CUSTOM"] = CUSTOM;   // you could change the value of this in your code
+ANIMATIONS["Exercise"] = ANIMATIONS["exercise"] = ANIMATIONS["EXERCISE"] = EXERCISE;
+ANIMATIONS["Juggler"] = ANIMATIONS["juggler"] = ANIMATIONS["JUGGLER"] = JUGGLER;
+ANIMATIONS["Bike"] = ANIMATIONS["bike"] = ANIMATIONS["BIKE"] = BIKE;
+ANIMATIONS["Dive"] = ANIMATIONS["dive"] = ANIMATIONS["DIVE"] = DIVE;
