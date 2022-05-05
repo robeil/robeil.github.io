@@ -9,7 +9,7 @@ function onLoadEvent() {
     let task = document.getElementById("task");
 
     if (task) {
-        mainTask.textContent = task.value;
+        mainTask.textContent = localStorage.getItem('textinput');
     }
     //addBtn.onclick = 
     addBtn.onclick = function () {
@@ -23,7 +23,6 @@ function onLoadEvent() {
             mainTask.textContent = localStorage.getItem('textinput')
         }
     }
-
 
     // clearBTn.onclick = 
     //clearing given task
