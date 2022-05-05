@@ -23,7 +23,8 @@ textarea {
 
 fieldset {
     width: 6%;
-    float: left;
+    /* float: left; */
+    display: inline;
     border: 3px solid black;
     margin-left: 5%;
 }
