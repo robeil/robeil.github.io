@@ -1,0 +1,34 @@
+
+1.A :-  The difference is the first one is execute after 2000 miliSeconds,
+ which is correct way, and best practice.
+
+1.B :- The second one break the functionality of the waiting time because,
+ the function will be called imediately, then returing nothing(Undifined) so there is 
+ no item to execute after 2000 miliSeconds.This is not the best practice.
+
+ 2,alert(x) : After excuting the function returns 6.
+alert(y(2,3)): And Same thing after excuting the function returns 6.
+
+3, Here is the Code:
+
+function booyah1(){
+    alert("BOOYAH1");
+
+}  
+    function booyah2(){
+        
+        return (function x(){
+            alert("BOOYAH2");
+        });
+        
+    }
+
+4,
+Unobtrusive Javascript:
+This means it is best practice separating the Javascript from writing inside the html files.
+It is also easy to update the code as all the Javascript logic is present in a separate file.
+Example: No function call inside button tag, such as onclick.
+Main reason is the sepration of concepts:
+            - content (html)
+            - presentation (css)
+            - behavior (js)
