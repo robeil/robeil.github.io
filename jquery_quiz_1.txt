@@ -1,14 +1,13 @@
 1. In jQuery terminology, what is the difference between the “jQuery function” and the “jQuery object”? 
 
--> jQuery function: a set of statements that takes input, do some specific computation and produce output.
+-> jQuery Function :- a set of statements that takes input, do some specific computation and produce output.
 or that performs some specific task or does some computation and then return the result to the user.
--> jQuery objects: are array like objects that is invoked by css selector and its returns
+-> jQuery Objects :- are array like objects that is invoked by css selector and its returns
 all element that much the given selector.
 
 
 2. Write jQuery code to find all h1 elements that are children of a div element and make their background 
 color red.
-Sample HTML:
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 --> Solution for the code
@@ -36,7 +35,7 @@ Sample HTML:
 <html>
 <head>
 <script>
-<!—INSERT YOUR JQUERY CODE HERE - - >
+
  $(document).ready(function(){
        $("p").append("Yes!");
 </script>

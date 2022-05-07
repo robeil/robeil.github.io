@@ -1,17 +1,10 @@
+1.The first method we are passing the booyah reference as an argument and it will execute after 2000.
 
-1.A :-  The difference is the first one is execute after 2000 miliSeconds,
- which is correct way, and best practice.
+- And the second we are calling the booyah function right before the before the timer up ass the return type to the setTimeout() function
+ 2,alert(x) : returns 6.
+   alert(y(2,3)): returns 6.
 
-1.B :- The second one break the functionality of the waiting time because,
- the function will be called imediately, then returing nothing(Undifined) so there is 
- no item to execute after 2000 miliSeconds.This is not the best practice.
-
- 2,alert(x) : After excuting the function returns 6.
-alert(y(2,3)): And Same thing after excuting the function returns 6.
-
-3, Here is the Code:
-
-function booyah1(){
+3, function booyah1(){
     alert("BOOYAH1");
 
 }  
@@ -24,11 +17,12 @@ function booyah1(){
     }
 
 4,
-Unobtrusive Javascript:
-This means it is best practice separating the Javascript from writing inside the html files.
-It is also easy to update the code as all the Javascript logic is present in a separate file.
-Example: No function call inside button tag, such as onclick.
-Main reason is the sepration of concepts:
-            - content (html)
-            - presentation (css)
-            - behavior (js)
+- Unobtrusive JavaScript, is a separated from the web site’s html markup.
+
+- Uses
+
+· Separation concern that the HTML mark-up is now clean without any traces of JavaScript. Page load time is faster.
+
+· It is also easy to update the code as all the JavaScript logic is present in s separate file.
+
+· We also get, better cache and accessed much faster.
