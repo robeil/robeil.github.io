@@ -10,44 +10,39 @@ h1 {
     text-align: center;
 }
 
-#gradeBox {
+ #gradeBox {
     background-color: antiquewhite;
     position: relative;
     border: 1px solid;
     padding: 10px;
-    width: 60%;
+    width: 90%;
     display: flex;
     align-items: center;
     margin-top: 0%;
-    margin-left: 20%;
+    margin-left: 3%;
     height: 800px;
     box-shadow: 5px 25px 18px 10px #888888;
-}
+} 
 
 select {
     font-size: 30px;
 }
 
-#form {
-    position: absolute;
-    margin-left: 30%;
+ #form {
+     position: relative;
+   
+    margin-left: 20%;
     align-items: center;
 
-}
+} 
 
 label {
+    position: relative;
+
     color: black;
     font-size: 50px;
 }
 
-#fname,
-#lname,
-#sId,
-#assign {
-
-    width: 450px;
-    height: 50px;
-}
 
 #submit {
     background-color: rgb(139, 172, 141);
