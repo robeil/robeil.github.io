@@ -8,8 +8,8 @@
 .signUpBox {
     border: 5px solid rgb(146, 170, 146);
     border-radius: 2em 4em 4em/0.5em 6em;
-    width: 50%;
-    margin-left: 25%;
+    width: 80%;
+    margin-left: 10%;
     box-shadow: 15px 25px gold;
     height: 500px;
     background-color: rgb(144, 214, 154);
@@ -22,7 +22,7 @@
 
 .form {
     margin-top: 15%;
-    margin-left: 20%;
+    margin-left: 3%;
 }
 label {
     font-weight: bold;
