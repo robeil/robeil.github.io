@@ -2,14 +2,14 @@
 $(document).ready(
     function () {
         $("#view_button").click(getPicture);
-    }); 
+    });
 //connection
 function getPicture() {
     $.ajax({
-        url: "https://api.nasa.gov/planetary/apod",
+        url: "https://api.nasa.gov/planetary/apod?api_key=Bdzl1U2O1v2kvtYRWGGeohUaulxpN6QwbiEwi3Ch",
         type: "GET",
         data: {
-            api_key: "Bdzl1U2O1v2kvtYRWGGeohUaulxpN6QwbiEwi3Ch",
+            //api_key: "Bdzl1U2O1v2kvtYRWGGeohUaulxpN6QwbiEwi3Ch",
             date: $("date").val()
         },
         dataType: "json",
@@ -20,10 +20,10 @@ function getPicture() {
 //displaying picture from the API
 function displayPicture(data) {
 
-    $("#pic").attr("src",data.url);
+    $("#pic").attr("src", data.url);
     $("#title").text(data.title);
 };
 //error handler
-function failedDisplay(error){
+function failedDisplay(error) {
     alert(error.responseText);
 };
