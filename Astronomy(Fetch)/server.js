@@ -14,8 +14,8 @@ $(document).ready(function () {
             //getting and using the response here
             .then(data => {
                 $("#pic").attr("src", data.url);
-                $("#title").text(data.title);
-                $("#dateP").text(data.date);
+                $("#title").text(`Title of the picture is : ${data.title}`);
+                $("#dateP").text(`This picture was taken : ${data.date}`);
                 $("#explain").text(data.explanation);
             })
             //handling error here if any occur

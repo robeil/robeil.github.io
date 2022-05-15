@@ -22,7 +22,8 @@ function getPicture() {
 //displaying picture from the API
 function displayPicture(data) {
     $("#pic").attr("src", data.url);
-    $("#title").text(data.title);
+    $("#title").text(`Title of the picture is : ${data.title}`);
+    $("#dateP").text(`This picture was taken : ${data.date}`);
     $("#explain").text(data.explanation);
 };
 //error handler
