@@ -1,10 +1,12 @@
 //loading page
 $(document).ready(() => {
+    $("#pic").hide();
     $("#view_button").click(getPicture);
 });
 //connection
 function getPicture() {
     let date = $("#date").val();
+    $("#pic").show();
     $.ajax({
         url: `https://api.nasa.gov/planetary/apod?date=${date}`,
         type: "GET",
